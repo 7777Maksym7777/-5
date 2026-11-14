@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Демонстраційний SPA-додаток для практичної роботи №5.">
+  <title>FlowSpace — SPA Demo</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#catalog" aria-label="FlowSpace — на головну">
+      <span class="brand-mark">F</span><span>FlowSpace</span>
+    </a>
+    <nav class="main-nav" aria-label="Головна навігація">
+      <a class="nav-link is-active" href="#catalog">Огляд</a>
+      <a class="nav-link" href="#details">Про проєкт</a>
+      <a class="nav-link" href="#feedback">Зворотний зв'язок</a>
+    </nav>
+    <div class="session-widget" aria-live="off">
+      <span class="status-dot"></span>
+      <span class="timer-label">Час сесії</span>
+      <strong id="session-timer">00:00:00</strong>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="catalog" class="page-section">
+      <div class="hero">
+        <div class="hero-copy">
+          <span class="eyebrow">ДЕМОНСТРАЦІЯ SPA</span>
+          <h1>Один простір.<br><span>Жодних перезавантажень.</span></h1>
+          <p class="hero-text">FlowSpace — демонстраційний вебінтерфейс, у якому навігація між розділами відбувається миттєво, а глобальний стан сторінки зберігається.</p>
+          <a class="primary-button" href="#details">Дізнатися більше <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="hero-art" aria-label="Ілюстрація робочого простору">
+          <div class="art-orbit orbit-one"></div>
+          <div class="art-orbit orbit-two"></div>
+          <div class="art-card">
+            <div class="art-top"><span></span><span></span><span></span></div>
+            <div class="art-line wide"></div><div class="art-line"></div>
+            <div class="art-progress"><span></span></div>
+            <div class="art-bottom"><div></div><div></div><div></div></div>
+          </div>
+          <div class="floating-note">✦ Зосередься на головному</div>
+        </div>
+      </div>
+
+      <div class="section-heading">
+        <span class="eyebrow">МОЖЛИВОСТІ</span>
+        <h2>Усе необхідне — в одному інтерфейсі</h2>
+        <p>Три прості принципи, на яких побудована демонстрація.</p>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card">
+          <div class="feature-icon lavender">↗</div>
+          <h3>Швидка навігація</h3>
+          <p>Перемикання секцій без повторного завантаження HTML-документа.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon mint">◷</div>
+          <h3>Збереження стану</h3>
+          <p>Таймер працює безперервно, навіть коли користувач змінює розділи.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon peach">⌘</div>
+          <h3>Чистий JavaScript</h3>
+          <p>Маршрутизація реалізована стандартними можливостями браузера.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="details" class="page-section is-hidden">
+      <div class="page-intro">
+        <span class="eyebrow">АРХІТЕКТУРА</span>
+        <h1>Як працює FlowSpace</h1>
+        <p>Цей проєкт демонструє принцип односторінкового застосунку (SPA) та відмінності від багатосторінкової архітектури (MPA).</p>
+      </div>
+      <div class="comparison-grid">
+        <article class="comparison-card">
+          <span class="tag tag-muted">MPA</span>
+          <h2>Багатосторінковий додаток</h2>
+          <ul>
+            <li>Кожен перехід запитує новий HTML-документ.</li>
+            <li>Браузер повторно завантажує сторінку.</li>
+            <li>Стан JavaScript зазвичай скидається.</li>
+            <li>Підходить для сайтів із незалежними сторінками.</li>
+          </ul>
+        </article>
+        <article class="comparison-card highlighted">
+          <span class="tag tag-accent">SPA</span>
+          <h2>Односторінковий додаток</h2>
+          <ul>
+            <li>Базовий HTML завантажується один раз.</li>
+            <li>JavaScript змінює видимий вміст.</li>
+            <li>Глобальний стан зберігається між переходами.</li>
+            <li>Підходить для інтерактивних вебзастосунків.</li>
+          </ul>
+        </article>
+      </div>
+      <div class="info-panel">
+        <div class="info-symbol">i</div>
+        <div><h3>Що перевірити?</h3><p>Відкрийте DevTools клавішею F12, перейдіть у вкладку Network, виберіть тип Doc та перемикайте розділи. Нові запити за HTML-документами не повинні з'являтися.</p></div>
+      </div>
+    </section>
+
+    <section id="feedback" class="page-section is-hidden">
+      <div class="page-intro">
+        <span class="eyebrow">ЗВОРОТНИЙ ЗВ'ЯЗОК</span>
+        <h1>Поділіться враженнями</h1>
+        <p>Форма демонструє обробку подій на стороні клієнта без перезавантаження документа.</p>
+      </div>
+      <div class="form-layout">
+        <div class="form-aside">
+          <div class="aside-icon">✉</div>
+          <h2>Маєте запитання?</h2>
+          <p>Заповніть форму — демонстраційний інтерфейс покаже результат локально у браузері.</p>
+          <div class="aside-detail"><span>01</span> Заповніть поля</div>
+          <div class="aside-detail"><span>02</span> Натисніть «Надіслати»</div>
+          <div class="aside-detail"><span>03</span> Перевірте повідомлення</div>
+        </div>
+        <form id="feedback-form" class="feedback-form">
+          <label for="name">Ваше ім'я</label>
+          <input id="name" name="name" type="text" placeholder="Наприклад, Олександр" required minlength="2">
+          <label for="email">Електронна пошта</label>
+          <input id="email" name="email" type="email" placeholder="name@example.com" required>
+          <label for="message">Повідомлення</label>
+          <textarea id="message" name="message" rows="4" placeholder="Напишіть ваше повідомлення..." required minlength="5"></textarea>
+          <button class="primary-button submit-button" type="submit">Надіслати повідомлення <span aria-hidden="true">→</span></button>
+          <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>© 2026 FlowSpace. Демонстраційний SPA-проєкт.</span>
+    <span>Створено на HTML, CSS та Vanilla JavaScript</span>
+  </footer>
+</body>
+</html>
